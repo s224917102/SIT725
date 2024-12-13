@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express App</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      flex: 1;
+    }
+    footer {
+      flex-shrink: 0;
+      background-color: #37474f;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <%- include('../components/navbar') %>  <!-- Navbar -->
+  <!-- Main content section where the specific page will be injected -->
+  <div class="container">
+    <!-- Page Layout -->
+    <div class="row">
+        <%- include('../components/sidebar') %> <!-- Sidebar -->
+        <%- include('../pages/home') %>
+    </div> 
+  </div>
+
+  <%- include('../components/footer') %>  <!-- Footer -->
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/js/extra.js"></script>
+  <script type="text/javascript" src="/js/colorchange.js"></script>
+  <script type="text/javascript" src="/js/form.js"></script>
+</body>
+</html>

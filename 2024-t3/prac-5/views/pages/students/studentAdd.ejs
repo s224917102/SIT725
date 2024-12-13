@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student</title>
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Add New Student</h1>
+
+    <% if (message) { %>
+      <div class="card-panel teal lighten-2">
+        <span class="white-text"><%= message %></span>
+      </div>
+    <% } %>
+
+    <form action="/student/add" method="POST">
+      <div class="input-field">
+        <input type="text" id="name" name="name" value="<%= student ? student.name : '' %>" required>
+        <label for="name">Name</label>
+      </div>
+
+      <div class="input-field">
+        <input type="email" id="email" name="email" value="<%= student ? student.email : '' %>" required>
+        <label for="email">Email</label>
+      </div>
+
+      <div class="input-field">
+        <input type="text" id="courseId" name="courseId" value="<%= student ? student.courseId : '' %>" required>
+        <label for="courseId">Course</label>
+      </div>
+
+      <button type="submit" class="btn">Create</button>
+    </form>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/materialize.min.js"></script>
+
+</body>
+</html>
