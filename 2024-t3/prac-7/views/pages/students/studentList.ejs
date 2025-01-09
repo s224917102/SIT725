@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student List</title>
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <h4 class="center-align">Student List</h4>
+
+        <!-- Search Bar -->
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="search" placeholder="Search by name, email, or course" onkeyup="filterStudents()">
+            <label for="search">Search Students</label>
+          </div>
+        </div>
+
+        <!-- Refresh Button -->
+        <div class="row">
+          <div class="col s12 center-align">
+            <button class="btn" onclick="refreshList()">Refresh List</button>
+          </div>
+        </div>
+
+        <!-- Table to display student data -->
+        <table class="highlight responsive-table" id="studentTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Course</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% students.forEach(student => { %>
+              <tr>
+                <td><%= student.name %></td>
+                <td><%= student.email %></td>
+                <td><%= student.courseId %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Materialize JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/materialize.min.js"></script>
+
+</body>
+</html>

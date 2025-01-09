@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link type="text/css" href="/css/styles.css"> <!-- Link the CSS file -->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+  
+</head>
+<body>
+    <div class="container">
+        <h4><b>Welcome to the Discussion Room</b></h4>
+        <p>Interact with your peers and stay connected!</p>
+
+        <!-- Chat Room Card -->
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title"><h5><b> Discussion Forum</b></h5></span>
+                <div id="messages" style="height: 200px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px;"></div>
+                <div class="input-field">
+                    <input type="text" id="message" placeholder="Type a message">
+                </div>
+                <button id="send-btn" class="btn waves-effect waves-light">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Materialize JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/js/materialize.min.js"></script>
+    <script defer src="/socket.io/socket.io.js"></script> <!-- Include Socket.IO -->
+    <script defer src="/js/client.js"></script> <!-- Include the client-side script -->
+</body>
+</html>
